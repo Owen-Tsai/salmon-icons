@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:icons": "node src/scripts/process.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -20,6 +21,7 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
+    "babel-loader": "^8.2.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
     "stylus": "^0.54.7",
@@ -43,6 +45,9 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
+    "ignorePatterns": [
+      "*.js"
+    ],
     "rules": {}
   },
   "browserslist": [
