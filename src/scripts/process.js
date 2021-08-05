@@ -6,5 +6,7 @@ const svgDirPrefix = './src/icons'
 const files = fs.readdirSync(svgDirPrefix)
 
 if (files.length > 0) {
-  files.forEach(fileName => generateComponent(`${svgDirPrefix}/${fileName}`))
+  files.forEach(fileName => {
+    generateComponent(`${svgDirPrefix}/${fileName}`)
+  })
 }

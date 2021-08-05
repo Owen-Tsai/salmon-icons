@@ -1,6 +1,9 @@
 <template>
   <span class="sui-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.54 18C13.0666 18.0006 12.6076 17.8381 12.24 17.54L7.13996 13.33C6.93996 13.1708 6.77845 12.9685 6.66744 12.7383C6.55643 12.508 6.49878 12.2556 6.49878 12C6.49878 11.7444 6.55643 11.492 6.66744 11.2618C6.77845 11.0315 6.93996 10.8292 7.13996 10.67L12.24 6.46001C12.547 6.214 12.917 6.05919 13.3077 6.01323C13.6984 5.96726 14.0942 6.03198 14.45 6.20001C14.7591 6.33629 15.0225 6.55868 15.2087 6.84063C15.3949 7.12257 15.496 7.45215 15.5 7.79001V16.21C15.496 16.5479 15.3949 16.8774 15.2087 17.1594C15.0225 17.4413 14.7591 17.6637 14.45 17.8C14.1641 17.93 13.854 17.9982 13.54 18V18Z" fill="black"/>
+</svg>
+
   </span>
 </template>
 
