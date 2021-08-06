@@ -7,7 +7,10 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build:icons": "node src/scripts/process.js",
-    "copy-filled-icons": "node src/scripts/process-filled-icons.js"
+    "copy-filled-icons": "node src/scripts/process-filled-icons.js",
+    "gen-component-list": "node build/gen-component-list.js",
+    "build:full": "node build/build.full.js",
+    "build:components": "node build/build.components.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",

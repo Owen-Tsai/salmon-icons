@@ -44,6 +44,5 @@
 <style lang="stylus" scoped>
   .demo-icon {
     font-size 24px
-    vertical-align -4px
   }
 </style>
