@@ -40,9 +40,3 @@
     }
   })
 </script>
-
-<style lang="stylus" scoped>
-  .demo-icon {
-    font-size 24px
-  }
-</style>

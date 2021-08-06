@@ -11,20 +11,22 @@ const generateComponent = (filePath) => {
     let baseName = fileName.split('.svg').shift()
     let componentName = baseName.split('-').map(capitalizeInitial).join('')
 
-    let templateStr =
-      `<template>
-  <span class="sui-icon">
-    ${content}
-  </span>
-</template>\n\n`
+    let templateStr = `
+      <template>
+        <span class="sui-icon">
+          ${content}
+        </span>
+      </template>\n\n
+    `
 
-    templateStr +=
-      `<script lang="ts">
-  import { defineComponent } from 'vue'
-  export default defineComponent({
-    name: '${componentName}'
-  })
-</script>`
+    templateStr += `
+      <script lang="ts">
+        import { defineComponent } from 'vue'
+        export default defineComponent({
+          name: '${componentName}'
+        })
+      </script>
+    `
 
     fs.writeFileSync(`./src/components/${baseName}.vue`, templateStr)
   })
