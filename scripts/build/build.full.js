@@ -16,7 +16,7 @@ module.exports =  merge(baseConfig, {
     umdNamedDefine: true,
   },
   // externalize vue package so
-  // the build files won't contain source code of vue
+  // the scripts files won't contain source code of vue
   externals: {
     vue: {
       root: 'Vue',

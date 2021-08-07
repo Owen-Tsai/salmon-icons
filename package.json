@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service scripts",
     "lint": "vue-cli-service lint",
-    "build:icons": "node ./src/scripts/process.js",
+    "build:icons": "node scripts/process.js",
     "copy-filled-icons": "node ./src/scripts/process-filled-icons.js",
-    "gen-component-list": "node ./build/gen-component-list.js",
-    "build:full": "webpack --config ./build/build.full.js",
-    "build:components": "webpack --config ./build/build.components.js"
+    "gen-component-list": "node scripts/gen-component-list.js",
+    "build:full": "webpack --config scripts/build/build.full.js",
+    "build:components": "webpack --config scripts/build/build.components.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",

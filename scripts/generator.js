@@ -1,4 +1,5 @@
 const fs = require('fs')
+const { capitalizeInitial } = require('./utils')
 
 const generateComponent = (filePath) => {
   fs.readFile(filePath, 'utf-8', (err, content) => {
@@ -30,10 +31,6 @@ const generateComponent = (filePath) => {
 
     fs.writeFileSync(`./src/components/${baseName}.vue`, templateStr)
   })
-}
-
-const capitalizeInitial = s => {
-  return s[0].toUpperCase() + s.slice(1)
 }
 
 module.exports = generateComponent
