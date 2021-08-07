@@ -5,10 +5,10 @@ const baseConfig = require('./base')
 module.exports =  merge(baseConfig, {
   mode: 'production',
   entry: {
-    main: path.resolve(__dirname, '../src/main.ts')
+    main: path.resolve(__dirname, '../../src/main.ts')
   },
   output: {
-    path: path.resolve(__dirname, '../lib'),
+    path: path.resolve(__dirname, '../../lib'),
     publicPath: '/lib/',
     filename: 'salmon-icons.min.js',
     library: 'salmon-icons',

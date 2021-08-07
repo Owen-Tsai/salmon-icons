@@ -12,7 +12,7 @@ if(files.length > 0) {
     const baseName = fileName.split('.').shift()
     const componentName = baseName.split('-').map(capitalizeInitial).join('')
     obj[baseName] = `components/${fileName}`
-    exportStr += `export { default as ${componentName} } from './${fileName}'\n`
+    exportStr += `export { default as ${componentName} } from './components/${fileName}'\n`
   })
 }
 
