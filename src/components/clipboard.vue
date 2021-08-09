@@ -1,16 +1,19 @@
-<template>
-  <span class="sui-icon">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M18 4V7C18 7.53043 17.7893 8.03914 17.4142 8.41421C17.0391 8.78929 16.5304 9 16 9H8C7.46957 9 6.96086 8.78929 6.58579 8.41421C6.21071 8.03914 6 7.53043 6 7V4C5.20435 4 4.44129 4.31607 3.87868 4.87868C3.31607 5.44129 3 6.20435 3 7V19C3 19.7956 3.31607 20.5587 3.87868 21.1213C4.44129 21.6839 5.20435 22 6 22H18C18.7956 22 19.5587 21.6839 20.1213 21.1213C20.6839 20.5587 21 19.7956 21 19V7C21 6.20435 20.6839 5.44129 20.1213 4.87868C19.5587 4.31607 18.7956 4 18 4V4Z" fill="black"/>
-<path d="M16 2H8C7.44772 2 7 2.44772 7 3V7C7 7.55228 7.44772 8 8 8H16C16.5523 8 17 7.55228 17 7V3C17 2.44772 16.5523 2 16 2Z" fill="black"/>
+
+      <template>
+        <span class="sui-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 4V2H17V4H20.007C20.555 4 21 4.445 21 4.993V21.007C20.9997 21.2703 20.895 21.5227 20.7089 21.7089C20.5227 21.895 20.2703 21.9997 20.007 22H3.993C3.72972 21.9997 3.4773 21.895 3.29114 21.7089C3.10497 21.5227 3.00026 21.2703 3 21.007V4.993C3 4.445 3.445 4 3.993 4H7ZM7 6H5V20H19V6H17V8H7V6ZM9 4V6H15V4H9Z" fill="black"/>
 </svg>
 
-  </span>
-</template>
+        </span>
+      </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue'
-  export default defineComponent({
-    name: 'Clipboard'
-  })
-</script>
+
+    
+      <script lang="ts">
+        import { defineComponent } from 'vue'
+        export default defineComponent({
+          name: 'Clipboard'
+        })
+      </script>
+    
