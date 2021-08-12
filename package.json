@@ -1,16 +1,15 @@
 {
   "name": "salmon-icons",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.3",
+  "main": "lib/salmon-icons.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service scripts",
     "lint": "vue-cli-service lint",
     "build:icons": "node scripts/process.js",
-    "copy-filled-icons": "node ./src/scripts/process-filled-icons.js",
     "gen-component-list": "node scripts/gen-component-list.js",
-    "build:full": "webpack --config scripts/build/build.full.js",
-    "build:components": "webpack --config scripts/build/build.components.js"
+    "build:full": "yarn gen-component-list && webpack --config scripts/build/build.full.js",
+    "build:components": "yarn gen-component-list && webpack --config scripts/build/build.components.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
