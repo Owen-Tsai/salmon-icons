@@ -1,16 +1,24 @@
 {
   "name": "salmon-icons",
-  "version": "0.1.13",
+  "version": "1.0.0-beta1",
   "types": "types/main.d.ts",
   "main": "lib/index.js",
   "module": "es/index.js",
   "unpkg": "lib/index.js",
   "sideEffects": false,
+  "keywords": [
+    "salmon-ui",
+    "icon",
+    "vue"
+  ],
+  "author": "Owen <owentsai.v@gmail.com> (https://mmcai.top/)",
+  "description": "A tree-shakeable Vue 3 icon library built for Salmon UI.",
   "files": [
     "types",
     "lib",
     "es"
   ],
+  "license": "MIT",
   "scripts": {
     "lint": "vue-cli-service lint",
     "gen-components": "node ./src/scripts/process.js",
