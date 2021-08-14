@@ -6,7 +6,7 @@ const vueCompiler = require('@vue/compiler-sfc')
 const klawSync = require('klaw-sync')
 const ora = require('ora')
 
-const TSCONFIG_PATH = path.resolve(__dirname, '..', '../tsconfig.json')
+const TSCONFIG_PATH = path.resolve(__dirname, '../tsconfig.json')
 
 const genVueTypes = async () => {
   const project = new Project({
@@ -23,7 +23,7 @@ const genVueTypes = async () => {
 
   const sourceFiles = []
 
-  const filePaths = klawSync(path.resolve(__dirname, '..', '../src/components'), {
+  const filePaths = klawSync(path.resolve(__dirname, '../src/components'), {
     nodir: true,
   }).map(item => item.path)
 

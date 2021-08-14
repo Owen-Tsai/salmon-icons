@@ -1,35 +1,31 @@
+const fs = require('fs')
 const path = require('path')
-const { VueLoaderPlugin } = require('vue-loader')
 
-module.exports = {
-  devtool: 'source-map',
-  module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.styl$/,
-        use: [
-          {loader: 'style-loader'},
-          {loader: 'css-loader'},
-          {loader: 'stylus-loader'},
-        ],
-      }
-    ]
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, '..', 'src')
+const root = path.resolve(__dirname, '..')
+
+console.log(root)
+
+const processFile = (file) => {
+  console.log(file)
+
+  fs.readFile(file, 'utf-8', function (err, data) {
+    if (err) {
+      console.error(err)
+      return
     }
-  },
-  plugins: [
-    new VueLoaderPlugin()
-  ]
+
+    let result = data.replace(/\.vue/g, '.js')
+
+    fs.writeFile(file, result, 'utf-8', function (err) {
+      if (err) {
+        console.error(err)
+        return
+      }
+    })
+
+    console.log('done')
+  })
 }
+
+processFile(path.resolve(root, './es/index.js'))
+processFile(path.resolve(root, './lib/index.js'))

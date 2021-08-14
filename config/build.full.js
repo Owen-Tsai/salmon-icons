@@ -1,28 +1,29 @@
-const path = require('path')
-const { merge } = require('webpack-merge')
-const baseConfig = require('./base')
+const path = require('path');
+const { nodeResolve } = require('@rollup/plugin-node-resolve')
+const esBuild = require('rollup-plugin-esbuild');
 
-module.exports =  merge(baseConfig, {
-  mode: 'production',
-  entry: {
-    main: path.resolve(__dirname, '../../src/main.ts')
-  },
-  output: {
-    path: path.resolve(__dirname, '../../lib'),
-    publicPath: '/lib/',
-    filename: 'salmon-icons.min.js',
-    library: 'salmon-icons',
-    libraryTarget: 'umd',
-    umdNamedDefine: true,
-  },
-  // externalize vue package so
-  // the scripts files won't contain source code of vue
-  externals: {
-    vue: {
-      root: 'Vue',
-      commonjs: 'vue',
-      commonjs2: 'vue',
-      amd: 'vue'
-    }
+const root = path.resolve(__dirname, '..')
+
+module.exports = {
+  input: path.resolve(__dirname, '../src/components/main.ts'),
+  output: [{
+    file: path.resolve(root, './es/index.js'),
+    format: 'esm',
+    name: 'icons',
+    sourcemap: false
+  }, {
+    file: path.resolve(root, './lib/index.js'),
+    format: 'cjs',
+    exports: 'named',
+    sourcemap: false
+  }],
+  plugins: [
+    nodeResolve(),
+    esBuild({
+      // target: "browser",
+    }),
+  ],
+  external(id) {
+    return /\.vue$/.test(id)
   }
-})
+}

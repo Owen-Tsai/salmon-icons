@@ -1,0 +1,29 @@
+import { defineComponent, openBlock, createBlock, createVNode } from 'vue';
+
+var script = defineComponent({
+  name: "CloseCircleFill"
+});
+
+const _hoisted_1 = { class: "sui-icon" };
+const _hoisted_2 = /* @__PURE__ */ createVNode("svg", {
+  width: "24",
+  height: "24",
+  viewBox: "0 0 24 24",
+  fill: "none",
+  xmlns: "http://www.w3.org/2000/svg"
+}, [
+  /* @__PURE__ */ createVNode("path", {
+    d: "M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM12 10.586L9.172 7.757L7.757 9.172L10.586 12L7.757 14.828L9.172 16.243L12 13.414L14.828 16.243L16.243 14.828L13.414 12L16.243 9.172L14.828 7.757L12 10.586Z",
+    fill: "black"
+  })
+], -1);
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock("span", _hoisted_1, [
+    _hoisted_2
+  ]);
+}
+
+script.render = render;
+script.__file = "src/components/close-circle-fill.vue";
+
+export { script as default };

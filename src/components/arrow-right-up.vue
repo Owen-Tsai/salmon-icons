@@ -1,0 +1,19 @@
+
+      <template>
+        <span class="sui-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.004 9.414L7.39697 18.021L5.98297 16.607L14.589 8H7.00397V6H18.004V17H16.004V9.414Z" fill="black"/>
+</svg>
+
+        </span>
+      </template>
+
+
+    
+      <script lang="ts">
+        import { defineComponent } from 'vue'
+        export default defineComponent({
+          name: 'ArrowRightUp'
+        })
+      </script>
+    
