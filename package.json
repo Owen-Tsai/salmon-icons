@@ -1,9 +1,13 @@
 {
   "name": "salmon-icons",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "types": "types/main.d.ts",
   "main": "lib/salmon-icons.min.js",
   "sideEffects": false,
+  "files": [
+    "types",
+    "lib"
+  ],
   "scripts": {
     "lint": "vue-cli-service lint",
     "gen-components": "node src/scripts/process.js",
