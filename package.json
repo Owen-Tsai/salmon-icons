@@ -1,6 +1,6 @@
 {
   "name": "salmon-icons",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "types": "types/main.d.ts",
   "main": "lib/index.js",
   "module": "es/index.js",
