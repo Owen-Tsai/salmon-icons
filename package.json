@@ -1,6 +1,6 @@
 {
   "name": "salmon-icons",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "types": "types/main.d.ts",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -13,11 +13,12 @@
   ],
   "scripts": {
     "lint": "vue-cli-service lint",
-    "gen-components": "node src/scripts/process.js",
-    "gen-components-list": "node src/scripts/gen-component-list.js",
-    "build:full": "rollup --config config/build.full.js",
-    "build": "config/build.sh",
-    "gen-types": "node config/morph.js"
+    "gen-components": "node ./src/scripts/process.js",
+    "gen-components-list": "node ./src/scripts/gen-component-list.js",
+    "build:full": "rollup --config ./config/build.full.js",
+    "build": "./config/build.sh && yarn build:full && yarn gen-types",
+    "gen-types": "node ./config/morph.js",
+    "post-process": "node ./config/post-process.js"
   },
   "dependencies": {
     "core-js": "^3.6.5"
