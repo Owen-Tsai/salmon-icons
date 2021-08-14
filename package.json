@@ -1,25 +1,29 @@
 {
   "name": "salmon-icons",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "types": "types/main.d.ts",
-  "main": "lib/salmon-icons.min.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "unpkg": "lib/index.js",
   "sideEffects": false,
   "files": [
     "types",
-    "lib"
+    "lib",
+    "es"
   ],
   "scripts": {
     "lint": "vue-cli-service lint",
     "gen-components": "node src/scripts/process.js",
     "gen-components-list": "node src/scripts/gen-component-list.js",
-    "build:full": "webpack --config config/build.full.js",
-    "build:comp": "webpack --config config/build.comp.js",
-    "gen-types": "tsc && node config/morph.js"
+    "build:full": "rollup --config config/build.full.js",
+    "build": "config/build.sh",
+    "gen-types": "node config/morph.js"
   },
   "dependencies": {
     "core-js": "^3.6.5"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.4",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -28,22 +32,18 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
-    "babel-loader": "^8.2.2",
-    "css-loader": "^6.2.0",
+    "esbuild": "^0.12.20",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
     "klaw-sync": "^6.0.0",
     "ora": "^5.4.1",
-    "style-loader": "^3.2.1",
+    "rollup": "^2.56.2",
+    "rollup-plugin-esbuild": "^4.5.0",
+    "rollup-plugin-vue": "^6.0.0",
     "stylus": "^0.54.7",
-    "stylus-loader": "^3.0.2",
     "ts-morph": "^11.0.3",
     "typescript": "~4.1.5",
-    "vue": "^3.0.0",
-    "vue-loader": "^16.4.1",
-    "webpack": "^5.48.0",
-    "webpack-cli": "^4.7.2",
-    "webpack-merge": "^5.8.0"
+    "vue": "^3.0.0"
   },
   "eslintConfig": {
     "root": true,
