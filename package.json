@@ -1,16 +1,15 @@
 {
   "name": "salmon-icons",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.7",
+  "types": "./types",
+  "main": "",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service scripts",
     "lint": "vue-cli-service lint",
-    "build:icons": "node scripts/process.js",
-    "copy-filled-icons": "node ./src/scripts/process-filled-icons.js",
-    "gen-component-list": "node scripts/gen-component-list.js",
-    "build:full": "webpack --config scripts/build/build.full.js",
-    "build:components": "webpack --config scripts/build/build.components.js"
+    "gen-components": "node src/scripts/process.js",
+    "gen-components-list": "node src/scripts/gen-component-list.js",
+    "build:full": "webpack --config config/build.full.js",
+    "build:comp": "webpack --config config/build.comp.js",
+    "gen-types": "tsc && node config/morph.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -29,9 +28,12 @@
     "css-loader": "^6.2.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
+    "klaw-sync": "^6.0.0",
+    "ora": "^5.4.1",
     "style-loader": "^3.2.1",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
+    "ts-morph": "^11.0.3",
     "typescript": "~4.1.5",
     "vue-loader": "^16.4.1",
     "webpack": "^5.48.0",
