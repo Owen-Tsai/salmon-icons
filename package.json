@@ -1,7 +1,8 @@
 {
   "name": "salmon-icons",
-  "version": "1.0.0-beta1",
+  "version": "1.0.0-beta3",
   "types": "types/main.d.ts",
+  "web-types": "./web-types.json",
   "main": "lib/index.js",
   "module": "es/index.js",
   "unpkg": "lib/index.js",
@@ -24,9 +25,10 @@
     "gen-components": "node ./src/scripts/process.js",
     "gen-components-list": "node ./src/scripts/gen-component-list.js",
     "build:full": "rollup --config ./config/build.full.js",
-    "build": "./config/build.sh && yarn build:full && yarn gen-types",
+    "build:comp": "node ./config/build.js",
     "gen-types": "node ./config/morph.js",
-    "post-process": "node ./config/post-process.js"
+    "post-process": "node ./config/post-process.js",
+    "gen-web-types": "vue-docgen-web-types"
   },
   "dependencies": {
     "core-js": "^3.6.5"
@@ -52,7 +54,8 @@
     "stylus": "^0.54.7",
     "ts-morph": "^11.0.3",
     "typescript": "~4.1.5",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-docgen-web-types": "^0.1.7"
   },
   "eslintConfig": {
     "root": true,
