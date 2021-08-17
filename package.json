@@ -1,8 +1,7 @@
 {
   "name": "salmon-icons",
-  "version": "1.0.0-beta3",
+  "version": "1.0.3",
   "types": "types/main.d.ts",
-  "web-types": "./web-types.json",
   "main": "lib/index.js",
   "module": "es/index.js",
   "unpkg": "lib/index.js",
@@ -28,7 +27,7 @@
     "build:comp": "node ./config/build.js",
     "gen-types": "node ./config/morph.js",
     "post-process": "node ./config/post-process.js",
-    "gen-web-types": "vue-docgen-web-types"
+    "build": "yarn gen-components && yarn gen-components-list && yarn build:comp && yarn build:full && yarn gen-types && yarn post-process"
   },
   "dependencies": {
     "core-js": "^3.6.5"
