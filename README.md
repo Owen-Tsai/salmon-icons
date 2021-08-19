@@ -20,12 +20,6 @@ OR
 npm install salmon-icons
 ```
 
-Although it is not recommanded, you can use salmon-icons via a `<script>` tag.
-
-```html
-<script src="path/to/salmon.min.js">
-```
-
 ## Usage
 
 Local registration:
@@ -33,14 +27,15 @@ Local registration:
 ```vue
 <template>
   <heart-fill></heart-fill>
+  <close class="custom-class"></close>
 </template>
 
 <script>
-  import HeartFill from 'salmon-icons'
+  import { HeartFill, Close } from 'salmon-icons'
 
   export default {
     components: {
-      HeartFill
+      HeartFill, Close
     }
   }
 </script>
@@ -49,35 +44,38 @@ Local registration:
 Global registration:
 
 ```js
-import HeartFill from 'salmon-icons'
+import { 
+  HeartFill, 
+  Close
+} from 'salmon-icons'
 
 const app = Vue.createApp({})
 
-app.component('heart-fill', HeartFill)
+app.component(HeartFill.name, HeartFill)
+// or give it any name you like
+app.component('times', Close)
+
+app.mount('#app')
 ```
+
+Although it's not recommended, you can register all components globally via a loop.
 
 ## Scripts
 
-Build vue components from svg icons:
+Generate vue components from svg sources:
 
 ```
-yarn build:icons
+yarn gen-components
 ```
 
-Build seperated js files for each component:
+Generate an entry file for all components, as well as a JSON file containing all component names and corresponding component directories.
 
 ```
-yarn build:components
+yarn gen-components-list
 ```
 
-Build a full js file with all icons bundled altogether:
+Build the library:
 
 ```
-yarn build:full
-```
-
-Generate a map containing names and paths of each component:
-
-```
-yarn gen-component-list
+yarn build
 ```
