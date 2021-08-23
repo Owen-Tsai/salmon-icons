@@ -6,24 +6,20 @@
 
 ---
 
-*`salmon-icons` requires Vue 3.*
+*`salmon-icons` requires Vue 3. All icons listed [here](https://mmcai.top/salmon-icons/)*
+
+> **NOTICE** Since version `1.0.5-beta2` <br> salmon-icons is now a scoped package under @salmon-ui. Please use @salmon-ui/icons instead.
 
 ## Install
 
 ```
-yarn add salmon-icons
+yarn add @salmon-ui/icons
 ```
 
 OR
 
 ```
-npm install salmon-icons
-```
-
-Although it is not recommanded, you can use salmon-icons via a `<script>` tag.
-
-```html
-<script src="path/to/salmon.min.js">
+npm install @salmon-ui/icons
 ```
 
 ## Usage
@@ -33,14 +29,15 @@ Local registration:
 ```vue
 <template>
   <heart-fill></heart-fill>
+  <close class="custom-class"></close>
 </template>
 
 <script>
-  import HeartFill from 'salmon-icons'
+  import { HeartFill, Close } from 'salmon-icons'
 
   export default {
     components: {
-      HeartFill
+      HeartFill, Close
     }
   }
 </script>
@@ -49,35 +46,38 @@ Local registration:
 Global registration:
 
 ```js
-import HeartFill from 'salmon-icons'
+import { 
+  HeartFill, 
+  Close
+} from 'salmon-icons'
 
 const app = Vue.createApp({})
 
-app.component('heart-fill', HeartFill)
+app.component(HeartFill.name, HeartFill)
+// or give it any name you like
+app.component('times', Close)
+
+app.mount('#app')
 ```
+
+Although it's not recommended, you can register all components globally via a loop.
 
 ## Scripts
 
-Build vue components from svg icons:
+Generate vue components from svg sources:
 
 ```
-yarn build:icons
+yarn gen-components
 ```
 
-Build seperated js files for each component:
+Generate an entry file for all components, as well as a JSON file containing all component names and corresponding component directories.
 
 ```
-yarn build:components
+yarn gen-components-list
 ```
 
-Build a full js file with all icons bundled altogether:
+Build the library:
 
 ```
-yarn build:full
-```
-
-Generate a map containing names and paths of each component:
-
-```
-yarn gen-component-list
+yarn build
 ```
