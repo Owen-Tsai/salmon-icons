@@ -1,6 +1,6 @@
 {
-  "name": "salmon-icons",
-  "version": "1.0.5-beta1",
+  "name": "@salmon-ui/icons",
+  "version": "1.0.5-beta2",
   "types": "types/main.d.ts",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -11,6 +11,7 @@
     "icon",
     "vue"
   ],
+  "homepage": "https://mmcai.top/salmon-icons/",
   "author": "Owen <owentsai.v@gmail.com> (https://mmcai.top/)",
   "description": "A tree-shakeable Vue 3 icon library built for Salmon UI.",
   "files": [

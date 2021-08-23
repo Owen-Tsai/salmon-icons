@@ -1,12 +1,9 @@
 
       <template>
-        <span class="sui-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M9 13.59L17.607 4.98303L19.021 6.39703L10.414 15.004H18V17.004H7V6.00403H9V13.589V13.59Z" fill="black"/>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 13.59L17.607 4.98303L19.021 6.39703L10.414 15.004H18V17.004H7V6.00403H9V13.589V13.59Z" fill="currentColor"/>
 </svg>
-
-        </span>
-      </template>
+</template>
 
 
     

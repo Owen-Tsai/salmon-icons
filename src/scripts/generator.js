@@ -13,11 +13,7 @@ const generateComponent = (filePath) => {
     let componentName = baseName.split('-').map(capitalizeInitial).join('')
 
     let templateStr = `
-      <template>
-        <span class="sui-icon">
-          ${content}
-        </span>
-      </template>\n\n
+      <template>\n${content}</template>\n\n
     `
 
     templateStr += `
