@@ -6,18 +6,20 @@
 
 ---
 
-*`salmon-icons` requires Vue 3.*
+*`salmon-icons` requires Vue 3. All icons listed [here](https://mmcai.top/salmon-icons/)*
+
+> **NOTICE** Since version `1.0.5-beta2` <br> salmon-icons is now a scoped package under @salmon-ui. Please use @salmon-ui/icons instead.
 
 ## Install
 
 ```
-yarn add salmon-icons
+yarn add @salmon-ui/icons
 ```
 
 OR
 
 ```
-npm install salmon-icons
+npm install @salmon-ui/icons
 ```
 
 ## Usage
