@@ -81,3 +81,19 @@ Build the library:
 ```
 yarn build
 ```
+
+## Special Thanks
+
+All scoped packages under @salmon-ui are built with [WebStorm](https://www.jetbrains.com/webstorm/). Open Source license provided by [JetBrains s.r.o](https://www.jetbrains.com/).
+
+<p align="center">
+  <img align="center" style="width: 120px;" src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png" alt="JetBrains Logo (Main) logo">
+  <p align="center">Copyright © 2000-2021 JetBrains s.r.o. JetBrains and the JetBrains logo are registered trademarks of JetBrains s.r.o.</p>
+</p>
+
+<p align="center">
+  <img align="center" style="width: 50%; min-width: 400px;" src="https://resources.jetbrains.com/storage/products/company/brand/logos/WebStorm.png" alt="WebStorm logo">
+  <p align="center">Copyright © 2021 JetBrains s.r.o. WebStorm and the WebStorm logo are registered trademarks of JetBrains s.r.o.</p>
+</p>
+
+
