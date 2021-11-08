@@ -352,6 +352,8 @@ export { default as PrinterFill } from './printer-fill.js';
 export { default as Printer } from './printer.js';
 export { default as QuestionFill } from './question-fill.js';
 export { default as Question } from './question.js';
+export { default as QuoteLeft } from './quote-left.js';
+export { default as QuoteRight } from './quote-right.js';
 export { default as RadioFill } from './radio-fill.js';
 export { default as Radio } from './radio.js';
 export { default as RainyFill } from './rainy-fill.js';
