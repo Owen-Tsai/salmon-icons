@@ -1,83 +1,27 @@
 {
   "name": "@salmon-ui/icons",
-  "version": "1.0.6",
-  "types": "types/main.d.ts",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "unpkg": "lib/index.js",
-  "sideEffects": false,
-  "keywords": [
-    "salmon-ui",
-    "icon",
-    "vue"
-  ],
-  "homepage": "https://mmcai.top/salmon-icons/",
-  "author": "Owen <owentsai.v@gmail.com> (https://mmcai.top/)",
-  "description": "A tree-shakeable Vue 3 icon library built for Salmon UI.",
-  "files": [
-    "types",
-    "lib",
-    "es"
-  ],
-  "license": "MIT",
+  "version": "1.1.0",
   "scripts": {
-    "lint": "vue-cli-service lint",
-    "gen-components": "node ./src/scripts/process.js",
-    "gen-components-list": "node ./src/scripts/gen-component-list.js",
-    "build:full": "rollup --config ./config/build.full.js",
-    "build:comp": "node ./config/build.js",
-    "gen-types": "node ./config/morph.js",
-    "post-process": "node ./config/post-process.js",
-    "build": "yarn gen-components && yarn gen-components-list && yarn build:comp && yarn build:full && yarn gen-types && yarn post-process"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite serve",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue",
+    "clean": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix"
   },
-  "dependencies": {
-    "core-js": "^3.6.5"
+  "peerDependencies": {
+    "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^13.0.4",
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-typescript": "^7.0.0",
-    "esbuild": "^0.12.20",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0",
-    "klaw-sync": "^6.0.0",
-    "ora": "^5.4.1",
-    "rollup": "^2.56.2",
-    "rollup-plugin-esbuild": "^4.5.0",
-    "rollup-plugin-vue": "^6.0.0",
-    "stylus": "^0.54.7",
-    "ts-morph": "^11.0.3",
-    "typescript": "~4.1.5",
-    "vue": "^3.0.0",
-    "vue-docgen-web-types": "^0.1.7"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended",
-      "@vue/typescript/recommended"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2020
-    },
-    "ignorePatterns": [
-      "*.js"
-    ],
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "@vitejs/plugin-vue": "^1.9.3",
+    "autoprefixer": "^10.4.7",
+    "eslint": "^8.15.0",
+    "eslint-plugin-vue": "^9.0.1",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.4",
+    "vue-tsc": "^0.3.0"
+  }
 }
