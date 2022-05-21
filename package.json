@@ -6,7 +6,8 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite serve",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue",
-    "clean": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix"
+    "clean": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix",
+    "generate-sfc": "ts-node scripts/generate-sfc.ts"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
@@ -20,6 +21,7 @@
     "eslint-plugin-vue": "^9.0.1",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.0.24",
+    "ts-node": "^10.7.0",
     "typescript": "^4.4.3",
     "vite": "^2.6.4",
     "vue-tsc": "^0.3.0"
