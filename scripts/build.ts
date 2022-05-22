@@ -4,15 +4,17 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 const getInputEntries = () => {
-  const input = []
+  const input: Record<string, string> = {}
 
   fs.readdirSync('./src/components/', {
     withFileTypes: true
-  }).filter(e => {
+  }).filter(e =>
     e.isDirectory()
-  }).forEach(dir => {
-    input[dir.name] = path.join(__dirname, 'src/components/', dir.name, 'index.ts')
+  ).forEach(dir => {
+    input[dir.name] = path.join(__dirname, '../src/components/', dir.name, 'index.ts')
   })
+
+  console.log(input)
 
   return input
 }
