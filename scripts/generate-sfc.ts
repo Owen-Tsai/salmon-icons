@@ -1,34 +1,66 @@
 import fs from 'fs'
+import path from 'path'
 
-const capitalize = (s: string) => {
-  return s[0].toUpperCase() + s.slice(1)
-}
+import {
+  sfcPath,
+  iconPath,
+  toPascalCase,
+  getBaseName
+} from './shared'
 
-const generateSFC = (iconPath: string) => {
-  fs.readFile(iconPath, 'utf-8', (err, content) => {
+const generateSFC = (iconFileName: string) => {
+  const _path = path.join(iconPath, iconFileName)
+
+  fs.readFile(_path, 'utf-8', (err, content) => {
     if (err) {
-      console.error(`SFC generation failed for ${iconPath}`, err)
+      console.error(`SFC generation failed for ${iconFileName}`, err)
       return
     }
 
-    const fileName = iconPath.replace('./icons/', '')
-    const baseName = fileName.split('.svg').shift() as string
-    const componentName = baseName.split('-').map(capitalize).join('')
+    const fileName = iconFileName
+    const baseName = getBaseName(fileName)
+    const componentName = toPascalCase(baseName)
 
-    const templateTag = `<template>${content}</template>`
-    const text = `import ${componentName} from './${baseName}.vue'\nimport { App } from 'vue'\n${componentName}.install = (app: App) => { app.component('${componentName}', ${componentName}) }\nexport default ${componentName}`
+    const templateTag = `<template>\n  ${content}\n</template>`
+    const scriptTag = `<script lang="ts">\nimport { defineComponent } from 'vue'\nexport default defineComponent({ name: "${componentName}" })\n</script>`
 
-    fs.mkdirSync(`./src/components/${baseName}`, { recursive: true })
-
-    fs.writeFileSync(`./src/components/${baseName}/${baseName}.vue`, templateTag, {
-      encoding: 'utf-8'
-    })
-    fs.writeFileSync(`./src/components/${baseName}/index.ts`, text, {
-      encoding: 'utf-8'
-    })
+    fs.writeFileSync(
+      path.join(sfcPath, `${baseName}.vue`),
+      `${templateTag}\n${scriptTag}`,
+      'utf-8'
+    )
   })
 }
 
-fs.readdirSync('./icons').forEach((svg) => {
-  generateSFC(`./icons/${svg}`)
+/** Main Process */
+
+if (!fs.existsSync(sfcPath)) {
+  console.log('create packages directory')
+  fs.mkdirSync(sfcPath)
+  console.log('done')
+}
+
+console.log('generating vue SFCs')
+
+fs.readdirSync(iconPath).forEach((svg) => {
+  generateSFC(svg)
 })
+
+console.log('done')
+
+console.log('generating entry file')
+
+let str = ``
+
+fs.readdirSync(sfcPath).filter((file) => (
+  file.endsWith('.vue')
+)).forEach((file) => {
+  console.log('file', file)
+  const baseName = getBaseName(file, 'vue')
+  const componentName = toPascalCase(baseName)
+  str += `export { default as ${componentName} } from './${file}'\n`
+})
+
+fs.writeFileSync(path.join(sfcPath, 'index.ts'), str, 'utf-8')
+
+console.log('done')
