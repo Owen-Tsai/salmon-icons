@@ -22,5 +22,5 @@
     }
   },
   "include": ["scripts/**/*"],
-  "exclude": ["node_modules", "packages/index.ts"],
+  "exclude": ["node_modules", "packages/index.ts"]
 }
