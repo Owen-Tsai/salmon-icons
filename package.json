@@ -1,36 +1,33 @@
 {
   "name": "@salmon-ui/icons",
   "version": "1.1.0",
+  "description": "A tree-shakeable Vue 3 icon library",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite serve",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue",
-    "clean": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix",
-    "generate-sfc": "ts-node scripts/generate-sfc.ts",
-    "build-sfc": "vite build --config scripts/build.ts"
+    "generate-sfc": "esno scripts/generate.ts"
   },
+  "keywords": [
+    "vue",
+    "icons"
+  ],
+  "author": "Owen",
+  "license": "MIT",
   "peerDependencies": {
-    "vue": "^3.0.0"
+    "vue": "^3.2.0"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@types/klaw-sync": "^6.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.25.0",
-    "@typescript-eslint/parser": "^5.25.0",
-    "@vitejs/plugin-vue": "^1.9.3",
+    "@types/fs-extra": "^9.0.13",
+    "chalk": "^5.0.1",
+    "consola": "^2.15.3",
     "esbuild": "^0.14.39",
-    "eslint": "^8.15.0",
-    "eslint-plugin-vue": "^9.0.1",
-    "klaw-sync": "^6.0.0",
-    "ora": "^6.1.0",
+    "esno": "^0.16.3",
+    "fast-glob": "^3.2.11",
+    "fs-extra": "^10.1.0",
     "rollup": "^2.74.1",
     "rollup-plugin-esbuild": "^4.9.1",
-    "rollup-plugin-vue": "^6.0.0",
-    "ts-morph": "^14.0.0",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.4.3",
-    "vite": "^2.6.4",
-    "vue-tsc": "^0.3.0"
+    "typescript": "^4.6.4",
+    "unplugin-vue": "^2.1.0",
+    "vue": "^3.2.36",
+    "vue-tsc": "^0.34.16"
   }
 }
