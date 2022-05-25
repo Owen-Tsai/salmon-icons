@@ -2,10 +2,15 @@
   "name": "@salmon-ui/icons",
   "version": "1.1.0",
   "description": "A tree-shakeable Vue 3 icon library",
-  "main": "index.js",
   "scripts": {
-    "generate-sfc": "esno scripts/generate.ts",
-    "build": "esno scripts/build.ts"
+    "generate:sfc": "esno scripts/generate.ts",
+    "build:sfc": "esno scripts/build.ts",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly",
+    "build": "npm run generate:sfc && npm run build:sfc && npm run build:types"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Owen-Tsai/salmon-icons"
   },
   "keywords": [
     "vue",
@@ -13,6 +18,10 @@
   ],
   "author": "Owen",
   "license": "MIT",
+  "files": ["dist"],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/types",
   "peerDependencies": {
     "vue": "^3.2.0"
   },

@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "rootDir": "scripts",
     "target": "ES2018",
     "declaration": true,
     "emitDeclarationOnly": true,
@@ -16,11 +15,6 @@
     "lib": ["esnext", "dom"],
     "noImplicitAny": true
   },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
-  },
-  "include": ["scripts/**/*"],
-  "exclude": ["node_modules", "packages/index.ts"]
+  "include": ["packages/**/*"],
+  "exclude": ["node_modules"]
 }
