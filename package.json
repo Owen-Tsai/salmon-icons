@@ -1,9 +1,10 @@
 {
   "name": "@salmon-ui/icons",
-  "version": "1.1.1",
+  "version": "1.1.4",
   "description": "A tree-shakeable Vue 3 icon library",
   "scripts": {
-    "generate:sfc": "npx svgo -f ./icons -o ./icons && esno scripts/generate.ts",
+    "svgo": "npx svgo -f ./icons -o ./icons",
+    "generate:sfc": "npm run svgo && esno scripts/generate.ts",
     "build:sfc": "esno scripts/build.ts",
     "build:types": "vue-tsc --declaration --emitDeclarationOnly",
     "build": "npm run generate:sfc && npm run build:sfc && npm run build:types"
