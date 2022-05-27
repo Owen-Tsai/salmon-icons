@@ -5,7 +5,7 @@
 </p>
 
 <!-- **A complete list of icons can be found here.** -->
-**Link to the complete list of icons is temporarily unavailable**
+**[Link to the complete list of icons](https://owen-cai.space/salmon-icons/)**
 
 *`salmon-icons` requires Vue 3*
 
