@@ -1,6 +1,6 @@
 {
   "name": "@salmon-ui/icons",
-  "version": "1.1.4",
+  "version": "1.1.6",
   "description": "A tree-shakeable Vue 3 icon library",
   "scripts": {
     "svgo": "npx svgo -f ./icons -o ./icons",
